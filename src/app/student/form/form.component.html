@@ -1,0 +1,29 @@
+<p>form works!</p>
+<div class="card-container">
+<form class="form" [formGroup]="personForm" (ngSubmit)="saveData()">
+    <div>
+        First Name:
+    </div>
+    <input type="text" class="form-control" formControlName="FirstName"/>
+    <div>
+        Last Name:
+    </div>
+    <input type="text" class="form-control" formControlName="LastName"/>
+    <div>
+        Email:
+    </div>
+    <input type="text" class="form-control" formControlName="Email"/>
+    <button class="btn-primary" disable="personForm.invalid"> Submit</button>
+
+</form>
+</div>
+<mat-grid-list cols="2" rowHeight="50px">
+    <mat-grid-tile *ngFor="let user of users">
+      <mat-card class="">
+        <mat-card-title>{{user.FirstName}}</mat-card-title>
+        <mat-card-content>
+           {{user.LastName}}
+        </mat-card-content>
+      </mat-card> 
+    </mat-grid-tile>
+  </mat-grid-list> 

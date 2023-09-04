@@ -1,0 +1,36 @@
+<p>student works!</p>
+<div>
+    <div>
+        Did the student attended the lab ? If yes please click below button
+    </div>
+    <button (click)="labInput = labInput + 1">
+        Click
+    </button>
+</div>
+<lab [labInput]="labInput" (numberOfLabs)="numberOfLabs($event)"></lab>
+<div>
+    Labs Counter {{numberOfLabsCount}}
+</div>
+<greet #tempReff>
+
+</greet>
+<button class="btn-primary" (click)="tempReff.displayText = true">
+    Template Reff Click
+</button>
+<div>
+    <button class="btn-primary" (click)="tempReff.displayText = false">
+        Hide Text using Template Reff
+    </button>
+</div>
+<div>
+    <button class="btn-primary" (click)="tempReff.displayText = false">
+        Hide Text using Template Reff by [Hidden]
+    </button>
+</div>
+<div>
+    <div *ngFor="let user of users">
+        First Name: {{user.FirstName}}
+        Last Name" {{user.LastName}}
+    </div>
+</div>
+
